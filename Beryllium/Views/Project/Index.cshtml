@@ -1,0 +1,28 @@
+﻿@model List<Project>
+<div class="gtco-section">
+    <div class="gtco-container">
+        <div class="row gtco-heading">
+            <div class="col-md-7 text-left">
+                <h2>Works</h2>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" id="name" class="form-control searchProject" placeholder="search">
+        </div>
+        <div class="row project-wrapper">
+                @foreach (Project item in Model)
+                {
+                    <div class="item col-md-4 default">
+                        <div class="gtco-item">
+                            <a href="#"><img src="~/images/@item.Img" alt="" class="img-responsive"></a>
+                            <h2><a href="#">@item.Title</a></h2>
+                            <p class="role">@item.SubTitle</p>
+                        </div>
+                    </div>
+                }
+            <partial name="_ProjectPartial">
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="projCount" name="name" value="@ViewBag.Count" />
